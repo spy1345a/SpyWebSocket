@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'org.aj'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url = 'https://repo.papermc.io/repository/maven-public/'
+    }
+}
+
+dependencies {
+    compileOnly 'io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT'
+    implementation 'org.java-websocket:Java-WebSocket:1.5.4'
+}
+
+/* ===== JAVA / PAPER ===== */
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+/* ===== SHADOW ONLY ===== */
+tasks.jar {
+    enabled = false
+}
+
+tasks.shadowJar {
+    archiveClassifier.set("") // shadow JAR becomes the main JAR
+}
+
+tasks.build {
+    dependsOn tasks.shadowJar
+}
+
+/* ===== RESOURCES ===== */
+processResources {
+    inputs.property "version", version
+    filesMatching('plugin.yml') {
+        expand version: version
+    }
+}

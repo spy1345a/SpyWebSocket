@@ -1,0 +1,7 @@
+name: SpyWebSocket
+version: '1.0-SNAPSHOT'
+main: org.aj.spyWebSocket.SpyWebSocket
+api-version: '1.21'
+load: POSTWORLD
+authors: [ Spy-1345a ]
+description: just a plugin that lets you execute comments via python
