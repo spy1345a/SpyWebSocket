@@ -28,7 +28,6 @@ It allows external programs (such as Python scripts, bots, or automation tools) 
 - **Tested versions:** 1.21+
 - **Java version:** 21
 - **Also works on:** Spigot (untested)
-- **Not compatible with:** Sponge, Fabric, Forge
 
 ---
 
@@ -159,9 +158,9 @@ Keep the WebSocket bound to 127.0.0.1
 Use firewalls when necessary
 
 Do not expose this plugin to the public internet
-
-## 📜 License
-MIT License (or replace with your preferred license)
+## Future Improvement
+* Adding Hot reload
+* self backend handling without python as backend
 
 ## ❤️ Contributing
 Pull requests, issues, and feature ideas are welcome.
